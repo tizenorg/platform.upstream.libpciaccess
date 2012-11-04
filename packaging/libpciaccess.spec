@@ -1,7 +1,3 @@
-#
-# Please submit bugfixes or comments via http://bugs.tizen.org/
-#
-
 Name:           libpciaccess
 Version:        0.13.1
 Release:        1
@@ -35,7 +31,7 @@ Development package for libpciaccess.
 %setup -q
 
 %build
-%reconfigure --disable-static \
+%configure --disable-static \
            --with-pciids-path=%{_datadir}/misc --with-zlib \
            LDFLAGS="${LDFLAGS} -Wl,--hash-style=both -Wl,--as-needed"
 make %{?_smp_mflags}
@@ -51,7 +47,7 @@ make %{?_smp_mflags}
 
 %files
 %defattr(-,root,root,-)
-%doc COPYING AUTHORS
+%doc COPYING
 %{_libdir}/libpciaccess.so.0
 %{_libdir}/libpciaccess.so.0.11.*
 
