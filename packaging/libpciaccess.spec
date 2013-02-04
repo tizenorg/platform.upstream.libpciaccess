@@ -32,8 +32,7 @@ Development package for libpciaccess.
 
 %build
 %configure --disable-static \
-           --with-pciids-path=%{_datadir}/misc --with-zlib \
-           LDFLAGS="${LDFLAGS} -Wl,--hash-style=both -Wl,--as-needed"
+           --with-pciids-path=%{_datadir}/misc --with-zlib 
 make %{?_smp_mflags}
 
 %install
@@ -47,7 +46,7 @@ make %{?_smp_mflags}
 
 %files
 %defattr(-,root,root,-)
-%doc COPYING
+%license COPYING
 %{_libdir}/libpciaccess.so.0
 %{_libdir}/libpciaccess.so.0.11.*
 
