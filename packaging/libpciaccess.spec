@@ -4,7 +4,7 @@ Release:        1
 License:        MIT
 Summary:        PCI access library
 Url:            http://gitweb.freedesktop.org/?p=xorg/lib/libpciaccess.git
-Group:          System Environment/Libraries
+Group:          Base/Device Management
 Source:         %{name}-%{version}.tar.bz2
 
 BuildRequires:  autoconf
