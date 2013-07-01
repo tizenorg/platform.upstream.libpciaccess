@@ -6,6 +6,7 @@ Summary:        PCI access library
 Url:            http://gitweb.freedesktop.org/?p=xorg/lib/libpciaccess.git
 Group:          Base/Device Management
 Source:         %{name}-%{version}.tar.bz2
+Source1001: 	libpciaccess.manifest
 
 BuildRequires:  autoconf
 BuildRequires:  automake
@@ -29,6 +30,7 @@ Development package for libpciaccess.
 
 %prep
 %setup -q
+cp %{SOURCE1001} .
 
 %build
 %configure --disable-static \
@@ -45,12 +47,14 @@ make %{?_smp_mflags}
 %postun -p /sbin/ldconfig
 
 %files
+%manifest %{name}.manifest
 %defattr(-,root,root,-)
 %license COPYING
 %{_libdir}/libpciaccess.so.0
 %{_libdir}/libpciaccess.so.0.11.*
 
 %files devel
+%manifest %{name}.manifest
 %defattr(-,root,root,-)
 %{_includedir}/pciaccess.h
 %{_libdir}/libpciaccess.so
