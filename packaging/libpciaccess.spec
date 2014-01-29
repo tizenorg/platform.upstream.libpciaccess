@@ -1,3 +1,5 @@
+%bcond_with x
+
 Name:           libpciaccess
 Version:        0.13.1
 Release:        1
@@ -12,8 +14,11 @@ BuildRequires:  autoconf
 BuildRequires:  automake
 BuildRequires:  libtool
 BuildRequires:  pkgconfig
-BuildRequires:  pkgconfig(xorg-macros)
 BuildRequires:  pkgconfig(zlib)
+
+%if %{with x}
+BuildRequires:  pkgconfig(xorg-macros)
+%endif
 
 %description
 libpciaccess is a library for portable PCI access routines across multiple
@@ -34,7 +39,7 @@ cp %{SOURCE1001} .
 
 %build
 %configure --disable-static \
-           --with-pciids-path=%{_datadir}/misc --with-zlib 
+           --with-pciids-path=%{_datadir}/misc --with-zlib
 make %{?_smp_mflags}
 
 %install
