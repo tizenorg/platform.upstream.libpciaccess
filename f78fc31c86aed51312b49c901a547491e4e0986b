@@ -1,0 +1,12 @@
+Code-Review+2: Patrick McCarty <patrick.mccarty@linux.intel.com>
+Code-Review+1: Lukasz Stelmach <l.stelmach@samsung.com>
+Code-Review+1: Karol Lewandowski <k.lewandowsk@samsung.com>
+Code-Review+1: Maciej Wereski <m.wereski@partner.samsung.com>
+Code-Review+2: Stephane Desneux <stephane.desneux@open.eurogiciel.org>
+Verified+1: Stephane Desneux <stephane.desneux@open.eurogiciel.org>
+Code-Review+1: Kévin THIERRY <kevin.thierry@open.eurogiciel.org>
+Submitted-by: Stephane Desneux <stephane.desneux@open.eurogiciel.org>
+Submitted-at: Fri, 07 Feb 2014 08:11:57 -0800
+Reviewed-on: https://review.tizen.org/gerrit/15911
+Project: platform/upstream/libpciaccess
+Branch: refs/heads/tizen
