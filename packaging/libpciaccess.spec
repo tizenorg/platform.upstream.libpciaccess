@@ -1,11 +1,11 @@
 %bcond_with x
 
 Name:           libpciaccess
-Version:        0.13.1
+Version:        0.13.2
 Release:        1
 License:        MIT
 Summary:        PCI access library
-Url:            http://gitweb.freedesktop.org/?p=xorg/lib/libpciaccess.git
+Url:            http://cgit.freedesktop.org/xorg/lib/libpciaccess/
 Group:          Base/Device Management
 Source:         %{name}-%{version}.tar.bz2
 Source1001: 	libpciaccess.manifest
@@ -15,10 +15,7 @@ BuildRequires:  automake
 BuildRequires:  libtool
 BuildRequires:  pkgconfig
 BuildRequires:  pkgconfig(zlib)
-
-%if %{with x}
-BuildRequires:  pkgconfig(xorg-macros)
-%endif
+BuildRequires:  pkgconfig(xorg-macros) >= 1.8
 
 %description
 libpciaccess is a library for portable PCI access routines across multiple
@@ -31,13 +28,18 @@ Requires:       %{name} = %{version}
 Requires:       pkgconfig
 
 %description devel
-Development package for libpciaccess.
+libpciaccess is a library for portable PCI access routines across multiple
+operating systems.
+
+This package contains development files needed to develop with the
+libpciaccess library.
 
 %prep
 %setup -q
 cp %{SOURCE1001} .
-
 %build
+NOCONFIGURE=1
+%autogen
 %configure --disable-static \
            --with-pciids-path=%{_datadir}/misc --with-zlib
 make %{?_smp_mflags}
@@ -55,8 +57,7 @@ make %{?_smp_mflags}
 %manifest %{name}.manifest
 %defattr(-,root,root,-)
 %license COPYING
-%{_libdir}/libpciaccess.so.0
-%{_libdir}/libpciaccess.so.0.11.*
+%{_libdir}/libpciaccess.so.*
 
 %files devel
 %manifest %{name}.manifest
