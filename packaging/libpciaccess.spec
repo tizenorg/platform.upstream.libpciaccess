@@ -2,7 +2,7 @@
 
 Name:           libpciaccess
 Version:        0.13.2
-Release:        1
+Release:        0
 License:        MIT
 Summary:        PCI access library
 Url:            http://cgit.freedesktop.org/xorg/lib/libpciaccess/
@@ -24,7 +24,7 @@ operating systems.
 %package devel
 Summary:        PCI access library development package
 Group:          Development/Libraries
-Requires:       %{name} = %{version}
+Requires:       %{name} = %{version}-%{release}
 Requires:       pkgconfig
 
 %description devel
