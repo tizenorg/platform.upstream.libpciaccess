@@ -34,6 +34,8 @@ operating systems.
 This package contains development files needed to develop with the
 libpciaccess library.
 
+%global TZ_SYS_RO_SHARE  %{?TZ_SYS_RO_SHARE:%TZ_SYS_RO_SHARE}%{!?TZ_SYS_RO_SHARE:/usr/share}
+
 %prep
 %setup -q
 cp %{SOURCE1001} .
@@ -45,6 +47,9 @@ NOCONFIGURE=1
 make %{?_smp_mflags}
 
 %install
+rm -rf %{buildroot}
+mkdir -p %{buildroot}/%{TZ_SYS_RO_SHARE}/license
+cp -af COPYING %{buildroot}/%{TZ_SYS_RO_SHARE}/license/%{name}
 %make_install
 
 %remove_docs
@@ -56,7 +61,7 @@ make %{?_smp_mflags}
 %files
 %manifest %{name}.manifest
 %defattr(-,root,root,-)
-%license COPYING
+%{TZ_SYS_RO_SHARE}/license/%{name}
 %{_libdir}/libpciaccess.so.*
 
 %files devel
@@ -65,3 +70,5 @@ make %{?_smp_mflags}
 %{_includedir}/pciaccess.h
 %{_libdir}/libpciaccess.so
 %{_libdir}/pkgconfig/pciaccess.pc
+%{TZ_SYS_RO_SHARE}/license/%{name}
+
