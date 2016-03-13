@@ -9,6 +9,14 @@ Branch: refs/heads/tizen
 Verified+1: SooChan Lim <sc1.lim@samsung.com>
 Code-Review+2: Boram Park <boram1288.park@samsung.com>
 Submitted-by: Boram Park <boram1288.park@samsung.com>
+Submitted-at: Thu, 10 Mar 2016 22:40:31 -0700
+Reviewed-on: https://review.tizen.org/gerrit/61858
+Project: platform/upstream/libpciaccess
+Branch: refs/heads/tizen
+
+Verified+1: SooChan Lim <sc1.lim@samsung.com>
+Code-Review+2: Boram Park <boram1288.park@samsung.com>
+Submitted-by: Boram Park <boram1288.park@samsung.com>
 Submitted-at: Thu, 10 Mar 2016 21:40:31 -0800
 Reviewed-on: https://review.tizen.org/gerrit/61858
 Project: platform/upstream/libpciaccess
