@@ -247,13 +247,14 @@ pci_device_linux_sysfs_probe( struct pci_device * dev )
 		  dev->func );
 	fd = open( name, O_RDONLY | O_CLOEXEC);
 	if ( fd != -1 ) {
+	    int ret;
 	    char * next;
 	    pciaddr_t  low_addr;
 	    pciaddr_t  high_addr;
 	    pciaddr_t  flags;
 
 
-	    bytes = read( fd, resource, 512 );
+	    ret = read( fd, resource, 512 );
 	    resource[511] = '\0';
 
 	    close( fd );

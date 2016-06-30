@@ -56,7 +56,7 @@
 static int
 read_bridge_info( struct pci_device_private * priv )
 {
-    uint8_t  buf[0x40];
+    uint8_t  buf[0x40] = {0, };
     pciaddr_t bytes;
     int err;
 
